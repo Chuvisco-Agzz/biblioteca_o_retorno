@@ -121,3 +121,34 @@ def ordenar():
         print("Autor:", livro["autor"])
         print("Ano:", livro["ano"])
         print("Status:", livro["status"])
+
+# Menu principal da biblioteca
+def menu_biblioteca():
+    while True:
+        print("\n──── MENU DA BIBLIOTECA ────")
+        print("1 - Cadastrar livro")
+        print("2 - Emprestar livro")
+        print("3 - Devolver livro")
+        print("4 - Listar livros")
+        print("5 - Buscar livro")
+        print("6 - Ordenar livros")
+        print("7 - Sair")
+
+        opcao = int(input("\nDigite uma opção: "))
+        if opcao == 1:
+            cadastrar()
+        elif opcao == 2:
+            emprestar_livro()
+        elif opcao == 3:
+            devolver_livro()
+        elif opcao == 4:
+            listar_livros()
+        elif opcao == 5:
+            buscar()
+        elif opcao == 6:
+            ordenar()
+        elif opcao == 7:
+            print("\nPrograma encerrado.")
+            break
+        else:
+            print("\nOpção inválida.")
