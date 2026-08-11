@@ -152,3 +152,7 @@ def menu_biblioteca():
             break
         else:
             print("\nOpção inválida.")
+
+carregar_livros()
+menu_biblioteca()
+
