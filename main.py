@@ -62,3 +62,17 @@ def devolver_livro():
                 print("\nEsse livro já está disponível.")
             return
     print("\nLivro não encontrado.")
+
+# Função para listar todos os livros
+def listar_livros():
+    if len(livros) == 0:
+        print("\nNenhum livro cadastrado.")
+    else:
+        print("\n===== LIVROS CADASTRADOS =====")
+        for livro in livros:
+            print("---------------------------")
+            print("ISBN:", livro["isbn"])
+            print("Título:", livro["titulo"])
+            print("Autor:", livro["autor"])
+            print("Ano:", livro["ano"])
+            print("Status:", livro["status"])
