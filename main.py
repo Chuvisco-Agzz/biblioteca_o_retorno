@@ -34,3 +34,31 @@ def cadastrar():
     livros.append(livro)
     salvar_livros()
     print("\nLivro cadastrado com sucesso!")
+
+# Função para emprestar um livro
+def emprestar_livro():
+    isbn = int(input("Digite o ISBN do livro: "))
+    for livro in livros:
+        if livro["isbn"] == isbn:
+            if livro["status"] == "disponível":
+                livro["status"] = "emprestado"
+                salvar_livros()
+                print("\nLivro emprestado com sucesso!")
+            else:
+                print("\nEsse livro já está emprestado.")
+            return
+    print("\nLivro não encontrado.")
+
+# Função para devolver um livro
+def devolver_livro():
+    isbn = int(input("Digite o ISBN do livro: "))
+    for livro in livros:
+        if livro["isbn"] == isbn:
+            if livro["status"] == "emprestado":
+                livro["status"] = "disponível"
+                salvar_livros()
+                print("\nLivro devolvido com sucesso!")
+            else:
+                print("\nEsse livro já está disponível.")
+            return
+    print("\nLivro não encontrado.")
