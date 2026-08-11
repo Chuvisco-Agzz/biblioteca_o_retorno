@@ -76,3 +76,21 @@ def listar_livros():
             print("Autor:", livro["autor"])
             print("Ano:", livro["ano"])
             print("Status:", livro["status"])
+
+# Função para buscar um livro pelo título ou autor
+def buscar():
+    pesquisa = input("\nDigite o título ou autor do livro: ").lower()
+    encontrado = False
+    for livro in livros:
+        if pesquisa in livro["titulo"].lower() or pesquisa in livro["autor"].lower():
+            print("\nLivro encontrado:")
+            print("---------------------------")
+            print("ISBN:", livro["isbn"])
+            print("Título:", livro["titulo"])
+            print("Autor:", livro["autor"])
+            print("Ano:", livro["ano"])
+            print("Status:", livro["status"])
+            encontrado = True
+    if encontrado == False:
+        print("\nNenhum livro encontrado.")
+
